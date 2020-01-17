@@ -1,7 +1,7 @@
 # HackerRank Medium
 # Word Order question: Repeated words, string segments
 # O(n) time complexity, have to go through n input words coming from STDIN
-# O(n) storage complexity, worst case every word is unique 
+# O(n) space complexity, worst case every word is unique
 
 from sys import stdin
 

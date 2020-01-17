@@ -2,7 +2,7 @@
 # Merge The Tools! question: String segments and Unique characters
 # Where n is the string length:
 # O(n) time complexity as we end up checking each character
-# O(1) storage complexity.
+# O(1) space complexity.
 # Worst case is all characters of the alphabet are used, but this caps out at 26 regardless of n -> constant space.
 
 

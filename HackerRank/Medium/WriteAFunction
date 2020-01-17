@@ -1,6 +1,6 @@
 # HackerRank Medium
 # Write A Function question: Leap Year Logic
-# O(1) time complexity, O(1) storage complexity. Input will only ever be one number, anyways.
+# O(1) time complexity, O(1) space complexity. Input will only ever be one number, anyways.
 
 def is_leap(year):
     leap = False
