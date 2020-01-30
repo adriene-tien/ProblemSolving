@@ -12,7 +12,9 @@ class Solution:
 
         return nums[0]
 
-    # attempt to optimize further
+    # attempt to optimize further - binary search
+    # don't want to iterate one by one
+    # assuming there is a rotation, last element must be less than first element 
     def findMin(self, nums: List[int]) -> int:
         pass
 
