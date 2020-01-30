@@ -8,8 +8,7 @@ class Solution:
     # Since double negatives bring positive, I knew that I also would want to keep track of the lowest product each time
     # O(n) Time complexity
     # O(1) Space complexity, I use an array/list but it is constant size of 2 no matter the input
-    # Currently only faster than 40% of other submissions despite being linear time
-    # But better than 100% of others in memory usage
+    # Better than 100% of others in memory usage
     def maxProduct(self, nums: List[int]) -> int:
         n = len(nums)
         if n == 0:
@@ -25,7 +24,3 @@ class Solution:
                 maxproduct = product[1]
 
         return maxproduct
-
-    # there should be a way to optimize this, attempt further
-    def maxProduct2(self, nums: List[int]) -> int:
-        pass
