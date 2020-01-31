@@ -16,7 +16,8 @@ class Solution:
     # don't want to iterate one by one - optimize via binary search: work for sorted arrays
     # min() will only ever compare 3 terms so this would run in constant time.
     # O(log(n)) time complexity, O(1) space complexity
-    # clean up and try without min()? 
+    # clean and try without min()?
+    # currently, best case seems to run faster than 96% of other submissions, pretty decent
     def findMin(self, nums: List[int]) -> int:
         n = len(nums)
         minBound = 0
