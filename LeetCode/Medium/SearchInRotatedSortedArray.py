@@ -3,7 +3,7 @@
 
 class Solution:
 
-    # CURRENTLY EXCEEDS TIME LIMIT, PLAN ON COMING BACK TOMORROW OR STH. this passes the default test case at least
+    # Currently failing some test cases, no longer exceeds time limit. COME BACK TMR
     # binary search approach should be O(log(n)) time
     # if else block is technically O(1) but is realistically very inefficient, this is what needs to be worked around
     # e.g. [4, 5, 6, 7, 0, 1, 2]
@@ -11,7 +11,7 @@ class Solution:
         n = len(nums)
         minBound = 0
         maxBound = n - 1
-        while minBound < maxBound:
+        while maxBound-minBound > 1:
             indexCheck = (minBound + maxBound) // 2
             if nums[indexCheck] == target:
                 return indexCheck
