@@ -12,9 +12,25 @@ class Solution:
 
         return nums[0]
 
-    # attempt to optimize further - binary search
-    # don't want to iterate one by one
-    # assuming there is a rotation, last element must be less than first element 
+    # linear solution will be slow if e.g. last item is the minimum element
+    # don't want to iterate one by one - optimize via binary search: work for sorted arrays
+    # min() will only ever compare 3 terms so this would run in constant time.
+    # O(log(n)) time complexity, O(1) space complexity
+    # clean up and try without min()? 
     def findMin(self, nums: List[int]) -> int:
-        pass
+        n = len(nums)
+        minBound = 0
+        maxBound = n - 1
+        if minBound == maxBound:
+            return nums[0]
+        minElement = nums[0]
+        while (maxBound - minBound > 1):
+            indexCheck = (maxBound + minBound) // 2
+            if nums[indexCheck] < nums[0]:
+                maxBound = indexCheck
+                if nums[indexCheck] < minElement:
+                    minElement = nums[indexCheck]
+            else:
+                minBound = indexCheck
+        return min(minElement, nums[minBound], nums[maxBound])
 
