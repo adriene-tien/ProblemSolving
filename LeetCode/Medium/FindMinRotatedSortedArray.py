@@ -35,3 +35,23 @@ class Solution:
                 minBound = indexCheck
         return min(minElement, nums[minBound], nums[maxBound])
 
+    # avoid using min() function. follow off of search in rotated sorted array simpler solution for finding min elem
+    def findMin2(self, nums: List[int]) -> int:
+        n = len(nums)
+        if n == 1:
+            return nums[0]
+        minIndex = 0
+        maxIndex = n - 1
+
+        if nums[minIndex] < nums[maxIndex]:
+            return nums[minIndex]
+
+        while minIndex <= maxIndex:
+            guessIndex = (minIndex + maxIndex) // 2
+            if nums[guessIndex] > nums[guessIndex + 1]:
+                return nums[guessIndex + 1]
+            elif nums[guessIndex] > nums[0]:
+                minIndex = guessIndex
+            else:
+                maxIndex = guessIndex
+
