@@ -3,8 +3,7 @@
 
 class Solution:
 
-    # O(n^2) time complexity
-    # O(n) space complexity due to usage of dictionary. subList, returnList are max size of 3 no matter what
+    # initial solution 
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         n = len(nums)
         returnList = []
