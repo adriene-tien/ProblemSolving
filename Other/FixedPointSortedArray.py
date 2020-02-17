@@ -1,4 +1,4 @@
-# Daily Coding Problem - Easy
+# Daily Coding Problem #273 - Easy
 # Description
 # A fixed point in an array is an element whose value is equal to its index. Given a sorted array of distinct elements,
 # return a fixed point, if one exists. Otherwise, return False.
@@ -8,6 +8,8 @@ class Solution:
 
     # takes an array `nums`, returns integer of a fixed point, otherwise a bool
     # given the array is sorted, this hints at a binary search approach to improve time from a linear search
+    # O(log(n)) time complexity
+    # O(1) space complexity: only use minIndex, maxIndex, repeatCheck
     def fixedPointSearch(self, nums):
         n = len(nums)
         if n == 0:
