@@ -3,7 +3,7 @@
 
 class Solution:
 
-    # initial solution 
+    # initial attempt, too slow (checking if the list already exists)
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         n = len(nums)
         returnList = []
@@ -21,5 +21,7 @@ class Solution:
                     subList = [startNumber]
                 else:
                     int_dict[nums[j]] = 1
-        return returnList
+        return
 
+
+    def threeSum2(self):
