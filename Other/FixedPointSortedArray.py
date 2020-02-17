@@ -41,9 +41,6 @@ class Solution:
         return False
 
 
-[-1, 0, 1, 2, 3, 4]
-
-
 # testing inputs
 # test even and odd sized arrays, no fixed point, single element. arrays of size 2, 3 +
 
