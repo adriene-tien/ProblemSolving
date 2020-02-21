@@ -3,7 +3,7 @@
 
 class Solution:
 
-    # initial attempt, too slow (checking if the list already exists)
+    # initial attempt, too slow (checking if the list exists in returnList brings it to O(n^3)
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         n = len(nums)
         returnList = []
@@ -24,4 +24,8 @@ class Solution:
         return
 
 
-    def threeSum2(self):
+    def threeSum2(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+        nums.sort()     # sort is O(n*log(n))
+        
+
