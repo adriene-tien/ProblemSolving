@@ -27,5 +27,7 @@ class Solution:
     def threeSum2(self, nums: List[int]) -> List[List[int]]:
         n = len(nums)
         nums.sort()     # sort is O(n*log(n))
-        
+
+        for i in range(0, n):
+
 
