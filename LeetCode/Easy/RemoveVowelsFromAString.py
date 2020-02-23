@@ -3,6 +3,7 @@
 # O(n) time complexity as we go through the size of the string
 # Space complexity:
 
+
 class Solution:
 
     def removeVowels(self, S: str) -> str:
