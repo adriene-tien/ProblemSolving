@@ -1,5 +1,9 @@
 # LeetCode Easy
 # Happy Number Question: sum of the square of a number's digits eventually results in 1
+# Time complexity: # of digits of a number is given by log(n) so TC: O(log(n)).
+# Each subsequent number we process ends up being added log(log(n)), log(log(log(n))), etc. terms where n = original num
+# log(n) term is dominant for large inputs so this ends up being our overall time complexity
+
 
 class Solution:
     def isHappy(self, n: int) -> bool:
