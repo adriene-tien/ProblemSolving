@@ -3,11 +3,33 @@
 
 class Solution:
 
+    # My final re-attempt to simplify it all down. this is more concise than my other optimized solution.
+    # Time complexity: O(n)
+    # Space complexity: O(1) since dictionary will cap out
+    def lengthOfLongestSubString(self, s: str) -> int:
+        n = len(s)
+        if n == 0 or n == 1:
+            return n
+
+        char_dict = {}
+        length = 0
+        maxLength = 0
+        indexToCountFrom = -1
+        for i in range(0, n):
+            if s[i] in char_dict:
+                if indexToCountFrom < char_dict[s[i]]:
+                    indexToCountFrom = char_dict[s[i]]
+
+            char_dict[s[i]] = i
+            length = i - indexToCountFrom
+            if length > maxLength:
+                maxLength = length
+
+        return maxLength
+
     # My brute force solution (show an interviewer that I can at least do the base problem).
     # Space complexity is constant O(1) as the dictionary will cap out at 26 characters
-    # LeetCode Performance Analysis
-    # Memory usage: better than 99.49% of other Python3 submissions
-    # Time complexity: only faster than 14.03% of other submissions - makes sense, need to get rid of nested for
+    # Time complexity: O(n^2), need to get rid of nested for
     # Time optimized solution seems to involve space trade off?
     def lengthOfLongestSubstringBrute(self, s: str) -> int:
         max_length = 0
