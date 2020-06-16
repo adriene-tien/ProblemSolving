@@ -1,5 +1,6 @@
 # LeetCode Medium 
 # Sort Colors Question 
+# My brute force solution as well as the one pass solution are included here 
 
 class Solution:
 
@@ -27,19 +28,29 @@ class Solution:
                 nums[i] = 1 
             else: 
                 nums[i] = 2
-    
-    # Try it in one pass? 
-    # this works but time complexity goes up to O(n^2) due to the for loop and nested insert 
-    def sortColors2(self, nums: List[int]) -> None: 
-        def sortColors(self, nums: List[int]) -> None: 
+
+
+    # I needed to look up the Dutch National Flag Problem to understand the one pass solution 
+    # Makes use of three pointers 
+    # O(n) time complexity and O(1) space. Always consider multiple pointers for optimizing sorting questions 
+    def sortColorsOnePass(self, nums: List[int]) -> None: 
         n = len(nums)
-        indexRed = 0 
-        for i in range(0, n): 
-            if nums[i] == 0: 
-                nums.pop(i)
-                nums.insert(0, 0)
-                indexRed += 1
-            elif nums[i] == 1: 
-                nums.pop(i)
-                nums.insert(indexRed, 1)
+        if n == 0 or n == 1: 
+            return 
+        low = 0 
+        mid = low 
+        high = n-1 
+        while high >= mid: 
+            val = nums[mid]
+            if nums[mid] == 0: 
+                nums[mid] = nums[low]
+                nums[low] = val 
+                low += 1
+                mid += 1
+            elif nums[mid] == 1: 
+                mid += 1
+            else: 
+                nums[mid] = nums[high]
+                nums[high] = val 
+                high -= 1 
         
