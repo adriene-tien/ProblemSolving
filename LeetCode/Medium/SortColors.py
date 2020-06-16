@@ -56,7 +56,8 @@ class Solution:
     
     # further notes: Why we increment mid when swapping with low but not high 
     # When swapping a 2 with nums[high], you can get a 1, 0, or 2 in return. incrementing mid 
-    # means we never compare this value again, and if we get a 2 in return that means it's left in the middle of the array 
-    # Mid and low start out the same as each other and we never get a 2 in return for swapping mid and low, we are left 
-    # with 0s and 1s which we actively want to swap. we either swap 0s for 0s which leave no change, or 0s at nums[mid] for 1s 
-    # at nums[low] which is the correct way to proceed. 
+    # means we never compare this value again. we need to re-compare to decide what to do again.
+    # e.g. if we get a 2 in return and increment, it's left in the middle of the array which is wrong
+    # Mid and low start out the same as each other and mid is AHEAD of low. 
+    # and we never get a 2 in return for swapping mid and low, we are left 
+    # with 1s which we actively want to swap with 0s. 
