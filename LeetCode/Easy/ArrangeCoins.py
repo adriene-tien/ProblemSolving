@@ -11,8 +11,8 @@ class Solution:
     # k^2 + k <= 2n
     # k^2 + k - 2n <= 0
     # Use quadratic formula here: (-1 +- √(1^2 - 4(1)(-2n)))/2
-    # => k = (-1 +- √(1+8n))/2
-    # => k = (-1 + √(1+8n))/2, we can take the positive only since k will never be negative (and ofc we know n is positive)
+    # => k=(-1 +- √(1+8n))/2
+    # => k=(-1 + √(1+8n))/2, we take positive only since k will never be negative (and ofc we know n is positive)
     def arrangeCoins(self, n: int) -> int:
         return math.floor((-1+math.sqrt(1+8*n))/2)
 
