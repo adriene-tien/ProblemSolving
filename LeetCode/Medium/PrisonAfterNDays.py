@@ -16,7 +16,6 @@ class Solution:
     def prisonAfterNDays(self, cells: List[int], N: int) -> List[int]:
         m = len(cells)
         lastFound = {}
-        count = 0
         checkCycle = 0
         prevPattern = ''.join(str(elem) for elem in cells)
         i = 0
@@ -31,16 +30,15 @@ class Solution:
             newPattern = "0" + newPattern + "0"
 
             if newPattern in lastFound and checkCycle == 0:
-                if N % (count - lastFound[newPattern]) == 0:
+                if N % (i - lastFound[newPattern]) == 0:
                     break
                 else:
-                    i = N - (N % (count - lastFound[newPattern]))
+                    i = N - (N % (i - lastFound[newPattern]))
                 checkCycle = 1
 
             lastFound[newPattern] = i
             prevPattern = newPattern
             i += 1
-            count += 1
 
         ret = []
         for i in range(0, len(prevPattern)):
