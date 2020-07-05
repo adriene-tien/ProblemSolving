@@ -13,7 +13,7 @@ class Solution:
             return True
 
         check = 0
-        while num > abs(1):
+        while num > 1:
             check = 0
             if num % 2 == 0:
                 check = 1
