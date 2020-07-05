@@ -12,7 +12,6 @@ class Solution:
         elif num <= 6:
             return True
 
-        check = 0
         while num > 1:
             check = 0
             if num % 2 == 0:
