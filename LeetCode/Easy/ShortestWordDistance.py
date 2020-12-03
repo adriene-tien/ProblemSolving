@@ -3,6 +3,7 @@
 # word1arr = [1, 4]
 # word2arr = [3]
 # need to make sure that the comparison is not between a word and itself, but with the other word 
+# O(n) time, O(1) space. One iteration over words[] needed, space does not change based on input size 
 
 class Solution:
     def shortestDistance(self, words: List[str], word1: str, word2: str) -> int:
