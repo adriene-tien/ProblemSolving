@@ -1,12 +1,11 @@
 class Solution:
     def twoSumLessThanK(self, nums: List[int], k: int) -> int:
         # use two pointer approach requires sorting the array first 
-        # O(nlogn) time, still O(1) space
         nums.sort()
         low = 0 
         high = len(nums)-1
         maxSum = -1
-        while low != high: 
+        while low < high: 
             currentSum = nums[low]+nums[high]
             if currentSum < k:
                 low += 1 
