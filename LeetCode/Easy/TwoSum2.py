@@ -3,7 +3,7 @@ class Solution:
         # two pointer approach. This is better space wise O(1) and still O(n) time. 
         low = 0
         high = len(numbers)-1
-        while low != high: 
+        while low < high: 
             if numbers[low]+numbers[high] < target: 
                 low += 1 
             elif numbers[low]+numbers[high] > target: 
